@@ -29,7 +29,7 @@ def book(request, flight_id):
         flight = Flight.objects.get(pk=flight_id)
         passenger = Passenger.objects.get(pk=passenger_id)
     except KeyError:
-        return render(request, "flights/error.html", {"message": "No selection."})
+        return render(request, "flights/error.html", {"message": "No selection. KEY ERROR"})
     except Flight.DoesNotExist:
         return render(request, "flights/error.html", {"message": "No flight."})
     except Passenger.DoesNotExist:
